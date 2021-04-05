@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         initializeVariables();
 
         apiInterface = ApiClient.getRetrofit().create(ApiInterface.class);
-        Call<MealList> call = apiInterface.getMeals();
+        Call<MealList> mealCall = apiInterface.getMeals();
+        Call<CategoryList> categoryCall = apiInterface.getCategories();
 
-        call.enqueue(new Callback<MealList>() {
+        mealCall.enqueue(new Callback<MealList>() {
             @Override
             public void onResponse(Call<MealList> call, Response<MealList> response) {
                 if (response.isSuccessful()) {
@@ -41,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<MealList> call, Throwable t) {
                 Log.d("Error on pager", t.getMessage());
+            }
+        });
+
+        categoryCall.enqueue(new Callback<CategoryList>() {
+            @Override
+            public void onResponse(Call<CategoryList> call, Response<CategoryList> response) {
+                
+            }
+
+            @Override
+            public void onFailure(Call<CategoryList> call, Throwable t) {
+
             }
         });
 
