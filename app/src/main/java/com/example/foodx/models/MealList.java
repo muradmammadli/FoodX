@@ -1,5 +1,6 @@
-package com.example.foodx;
+package com.example.foodx.models;
 
+import com.example.foodx.models.Meals;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

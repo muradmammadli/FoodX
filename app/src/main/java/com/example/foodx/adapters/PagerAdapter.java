@@ -1,4 +1,4 @@
-package com.example.foodx;
+package com.example.foodx.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.foodx.models.Meals;
+import com.example.foodx.R;
 
 import java.util.List;
 

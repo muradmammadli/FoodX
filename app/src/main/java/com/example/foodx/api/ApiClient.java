@@ -1,4 +1,4 @@
-package com.example.foodx;
+package com.example.foodx.api;
 
 import com.google.gson.Gson;
 
