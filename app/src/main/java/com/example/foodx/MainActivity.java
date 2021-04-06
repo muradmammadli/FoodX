@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewBottom;
     private Timer timer;
     private int page = 1;
+    public static final String KEY_CATEGORY_NAME = "categoryName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
