@@ -15,7 +15,7 @@ public interface ApiInterface {
     @GET("v1/1/categories.php")
     Call<CategoryList> getCategories();
 
-    @GET("/v1/1/filter.php")
+    @GET("v1/1/filter.php")
     Call<MealList> getMealByCategory(@Query("c") String categoryName);
 
 }

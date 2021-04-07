@@ -1,12 +1,17 @@
 package com.example.foodx.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.foodx.R;
 import com.example.foodx.models.Meals;
 
 import java.util.List;
@@ -24,14 +29,15 @@ public class MealsByCategoryAdapter extends RecyclerView.Adapter<MealsByCategory
     @NonNull
     @Override
     public mealsCategoryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
-        return null;
+        View v = LayoutInflater.from(context).inflate(R.layout.listitem_meals_by_category,parent,false);
+        return new mealsCategoryHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull mealsCategoryHolder holder, int position) {
-
+        Meals meal = mealsList.get(position);
+        holder.mealName.setText(meal.getStrMeal());
+        Glide.with(context).load(meal.getStrMealThumb()).placeholder(R.drawable.ic_launcher_foreground).into(holder.mealImage);
     }
 
     @Override
@@ -40,8 +46,12 @@ public class MealsByCategoryAdapter extends RecyclerView.Adapter<MealsByCategory
     }
 
     public class mealsCategoryHolder extends RecyclerView.ViewHolder {
+        TextView mealName;
+        ImageView mealImage;
         public mealsCategoryHolder(@NonNull View itemView) {
             super(itemView);
+            mealName = itemView.findViewById(R.id.meal_name);
+            mealImage = itemView.findViewById(R.id.meal_image);
         }
     }
 
